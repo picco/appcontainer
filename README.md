@@ -5,6 +5,7 @@ Simple IoC container intended for splitting up your node app into modules
 ```javascript
 var AppContainer = require('appcontainer');
 
+// Define your app as an instance of AppContainer and specify the modules to load.
 var app = new AppContainer(__dirname, [
   // maps to file ./app/module1.js
   'app/module1',
@@ -12,7 +13,11 @@ var app = new AppContainer(__dirname, [
   'app/module2',
 ]);
 
-// The app object has now been extended with additonal methods by the modules.
+// Include an additional module later on.
+app.use('app/module3');
+
+// The app is now an singleton object comprising of methods, variables and subobjects 
+// defined by the modules themselves.
 console.dir(app.module1method());
 console.dir(app.module2method());
 ```
@@ -20,7 +25,7 @@ console.dir(app.module2method());
 ```javascript
 module.exports = function(app) {
   // app === this, use the one you prefer.
-  // you have access to this.cwd which references the directory of the App Container.
+  // you have access to this.cwd which references the path of the App Container.
   app.module1method = function() {
     return 'beep';
   }
