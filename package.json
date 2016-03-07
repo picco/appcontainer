@@ -1,0 +1,16 @@
+{
+"name": "appcontainer",
+"description": "Simple IoC container intended for splitting up your node app into modules",
+"version": "0.0.1",
+"main": "main.js",
+"author": {
+  "name": "Ivo Nellis",
+  "email": "ivo.nellis@gmail.com"
+},
+"repository": {
+  "type": "git",
+  "url": "git@github.com:picco/appcontainer.git"
+},
+"license": "MIT",
+"dependencies": {}
+}
