@@ -6,10 +6,13 @@ Simple IoC container intended for splitting up your node app into modules
 var AppContainer = require('appcontainer');
 
 var app = new AppContainer(__dirname, [
+  // maps to file ./app/module1.js
   'app/module1',
+  // maps to file ./app/module2.js  
   'app/module2',
 ]);
 
+// The app object has now been extended with additonal methods by the modules.
 console.dir(app.module1method());
 console.dir(app.module2method());
 ```
