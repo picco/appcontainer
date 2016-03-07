@@ -18,8 +18,8 @@ app.use('app/module3');
 
 // The app is now an singleton object comprising of methods, variables and subobjects 
 // defined by the modules themselves.
-console.dir(app.module1method());
-console.dir(app.module2method());
+app.module1method();
+app.module2method();
 ```
 ## Defining a module
 ```javascript
